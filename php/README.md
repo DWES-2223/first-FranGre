@@ -7,3 +7,7 @@ Crear dos variables
 **continente**
 
 Procedemos a iniciarlizarlas e imprimirlas por pantalla
+
+
+## Ejercicio 2
+Mostrar todos los números pares del 1 al 100
