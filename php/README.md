@@ -11,3 +11,7 @@ Procedemos a iniciarlizarlas e imprimirlas por pantalla
 
 ## Ejercicio 2
 Mostrar todos los números pares del 1 al 100
+
+
+## Ejercicio 3
+Mostrar el cuadrado de los primeros 40 números
