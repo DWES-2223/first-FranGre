@@ -2,9 +2,7 @@
 
 class FunctionsTest extends \Codeception\Test\Unit
 {
-    /**
-     * @var \UnitTester
-     */
+    /*
     protected $tester;
     
     protected function _before()
@@ -126,5 +124,4 @@ class FunctionsTest extends \Codeception\Test\Unit
         $this->assertNotContains(6,parells([1,2,3,4,5]));
     }
     */
-
 }

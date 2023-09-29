@@ -6,7 +6,6 @@ class ActivitatPHP extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $tester;
-    /*
     protected function _before()
     {
         include_once('./src/functions.php');
@@ -31,6 +30,5 @@ class ActivitatPHP extends \Codeception\Test\Unit
        $this->assertEquals('alcoi', laureado(['barcelona','madrid','barcelona','alcoi','alcoi','alcoi']));
        $this->assertEquals('barcelona', laureado(['barcelona','madrid','barcelona','alcoi','alcoi','barcelona']));
     }
-    */
 
 }
