@@ -3,10 +3,29 @@ $records = include "atletes.php";
 $clubColum = array_column_ext( $records, "club", -1 );
 $atletaColum = array_column_ext( $records, "atleta", -1 );
 $ciutatColum = array_column_ext( $records, "lloc", -1 );
+?>
+    <h3>El club que más se repite</h3>
+<?php
+print_r( laureado( array_count_values( $clubColum ) ) );
+?>
+    <br>
+    <h3>El atelta que más se repite</h3>
+<?php
+print_r( laureado( array_count_values( $atletaColum ) ) );
+?>
+    <br>
+    <h3>El lloc que más se repite</h3>
+<?php
+print_r( laureado( array_count_values( $ciutatColum ) ) );
 
-var_dump( laureado( array_count_values( $clubColum ) ) );
-var_dump( laureado( array_count_values( $atletaColum ) ) );
-var_dump( laureado( array_count_values( $ciutatColum ) ) );
+$dataColum = array_column_ext( $records, "data", -1 );
+var_dump( $dataColum );
+?>
+    <br>
+    <h3>La data más antigua es </h3>
+<?php
+print_r( vell( $dataColum ) );
+
 
 function laureado( $array )
 {
@@ -24,6 +43,15 @@ function laureado( $array )
     }
 }
 
+function vell( $array )
+{
+    $soloDates = [];
+
+    foreach ( $array as $nombre => $valor ) {
+        array_push( $soloDates, fecha_inglesa( $valor ) );
+    }
+    return min( $soloDates );
+}
 
 function any( $date )
 {
