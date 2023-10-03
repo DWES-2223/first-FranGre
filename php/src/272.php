@@ -50,7 +50,7 @@ function vell( $array )
     foreach ( $array as $nombre => $valor ) {
         array_push( $soloDates, fecha_inglesa( $valor ) );
     }
-    return min( $soloDates );
+    return fecha_punto( min( $soloDates ) );
 }
 
 function any( $date )
@@ -61,6 +61,11 @@ function any( $date )
 function fecha_inglesa( $fecha ): string
 {
     return join( "/", array_reverse( explode( ".", $fecha ), true ) );
+}
+
+function fecha_punto( $fecha ): string
+{
+    return join( ".", array_reverse( explode( "/", $fecha ), true ) );
 }
 
 
