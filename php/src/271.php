@@ -99,11 +99,7 @@ if ( isset( $_POST["prova"] ) && isset( $_POST["marca"] ) && isset( $_POST["atle
             array_push( $nuevasCompeticiones, $competicion );
         }
     }
-    // no se como hacer para que escriba bien el fichero
-    var_dump( $nuevasCompeticiones );
-    $f=fopen('./atletes.php','w');
-    fwrite($f,json_encode($nuevasCompeticiones));
-    fclose($f);
+    showTable($nuevasCompeticiones);
 }
 
 
@@ -115,6 +111,39 @@ function isProvaInArray( $competiciones ): bool
         }
     }
     return false;
+}
+
+function showTable( $arrayCompeticiones )
+{
+    ?>
+    <table>
+        <tr>
+            <th>Prova</th>
+            <th>Marca</th>
+            <th>Atleta</th>
+            <th>Natalici</th>
+            <th>Club</th>
+            <th>Data</th>
+            <th>Lloc</th>
+        </tr>
+        <?php
+        foreach ( $arrayCompeticiones as $nombreCompeticion => $competicion ) {
+            ?>
+            <tr>
+                <td><?= $nombreCompeticion ?></td>
+                <?php
+                foreach ( $competicion as $propiedades ) {
+                    ?>
+                    <td><?= $propiedades ?></td>
+                    <?php
+                }
+                ?>
+            </tr>
+            <?php
+        }
+        ?>
+    </table>
+    <?php
 }
 
 ?>
