@@ -4,11 +4,11 @@ $clubColum = array_column_ext( $records, "club", -1 );
 $atletaColum = array_column_ext( $records, "atleta", -1 );
 $ciutatColum = array_column_ext( $records, "lloc", -1 );
 
-var_dump( getMaxestValueRepetead( array_count_values( $clubColum ) ) );
-var_dump( getMaxestValueRepetead( array_count_values( $atletaColum ) ) );
-var_dump( getMaxestValueRepetead( array_count_values( $ciutatColum ) ) );
+var_dump( laureado( array_count_values( $clubColum ) ) );
+var_dump( laureado( array_count_values( $atletaColum ) ) );
+var_dump( laureado( array_count_values( $ciutatColum ) ) );
 
-function getMaxestValueRepetead( $array )
+function laureado( $array )
 {
     $max = 0;
     foreach ( $array as $nombrePropiedad => $vecesRepetidas ) {
