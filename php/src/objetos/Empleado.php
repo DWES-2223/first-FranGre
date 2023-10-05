@@ -10,9 +10,9 @@ class Empleado extends Persona8
      * @param $salary
      * @param $numbersPhone
      */
-    public function __construct( string $name, string $surname, int $salary, ?int $age )
+    public function __construct( string $name, string $surname, int $salary )
     {
-        parent::__construct( $name, $surname, $age );
+        parent::__construct( $name, $surname );
         $this->salary = $salary;
         $this->numbersPhone = [];
     }
@@ -58,6 +58,7 @@ class Empleado extends Persona8
 
     public function listMobilePhones(): string
     {
+        // implode(","$this->getNumbersPhone());
         $phones = "";
         foreach ( $this->getNumbersPhone() as $numberPhone ) {
             $phones .= $numberPhone . ", ";
@@ -73,5 +74,10 @@ class Empleado extends Persona8
     public function haveToPaytaxes(): bool
     {
         return $this->getSalary() > TAXES_LIMIT;
+    }
+
+    public function __toString(): string
+    {
+        return  parent::print(). "<br> $this->salary €";
     }
 }

@@ -59,4 +59,13 @@ class Persona8
         self::$retiredAge = $age;
     }
 
+    public function __toString()
+    {
+        return $this->surname . ", " . $this->name . " -> " . $this->age;
+    }
+
+    public function print( )
+    {
+        return $this->surname . ", " . $this->name . " -> " . $this->age;
+    }
 }
