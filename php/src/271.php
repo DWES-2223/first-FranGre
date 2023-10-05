@@ -94,9 +94,9 @@ if ( isset( $_POST["prova"] ) && isset( $_POST["marca"] ) && isset( $_POST["atle
     $nuevasCompeticiones = [];
     foreach ( $competiciones as $nombreCompeticion => $competicion ) {
         if ( $nombreCompeticion == $_POST["prova"] ) {
-            array_push( $nuevasCompeticiones, ["marca" => $marca, "atleta" => $atleta, "natalici" => $natalici, "club" => $club, "data" => $data, "lloc" => $lloc] );
+            $nuevasCompeticiones[$nombreCompeticion] = ["marca" => $marca, "atleta" => $atleta, "natalici" => $natalici, "club" => $club, "data" => $data, "lloc" => $lloc];
         } else {
-            array_push( $nuevasCompeticiones, $competicion );
+            $nuevasCompeticiones[$nombreCompeticion] = $competicion;
         }
     }
     showTable($nuevasCompeticiones);
