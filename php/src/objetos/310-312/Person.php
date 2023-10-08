@@ -6,7 +6,7 @@ abstract class Person
     private string $apellidos;
     private int $edad;
 
-    function __construct( string $nombre, string $apellidos, int $edad )
+    public function __construct( string $nombre, string $apellidos, int $edad )
     {
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
@@ -48,6 +48,6 @@ abstract class Person
         return $this->getNombre() . " " . $this->getApellidos();
     }
 
-    public abstract function toHTML( Person $person );
+    public abstract function toHTML();
 
 }

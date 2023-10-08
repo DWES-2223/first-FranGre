@@ -1,4 +1,5 @@
 <?php
+include_once("Worker.php");
 
 class Employee extends Worker
 {
@@ -30,7 +31,7 @@ class Employee extends Worker
         $this->pricePerHour = $pricePerHour;
     }
 
-    function calculateSalary(): float
+    public function calculateSalary(): float
     {
         return $this->getHoursWorked() * $this->getPricePerHour();
     }

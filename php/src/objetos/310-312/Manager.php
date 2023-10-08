@@ -1,4 +1,5 @@
 <?php
+include_once ("Worker.php");
 
 class Manager extends Worker
 {

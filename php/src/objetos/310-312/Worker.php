@@ -1,11 +1,12 @@
 <?php
+include_once("Person.php");
 
 abstract class Worker extends Person
 {
     const RANGE_PAY_TAXES = 35000;
     private array $phones;
 
-    function __construct( string $nombre, string $apellidos, int $edad )
+    public function __construct( string $nombre, string $apellidos, int $edad )
     {
         parent::__construct( $nombre, $apellidos, $edad );
     }
@@ -20,13 +21,14 @@ abstract class Worker extends Person
         $this->phones = $phones;
     }
 
-    function toHTML( Person $person )
+    public function toHTML()
     {
         ?>
         <p>
-            <?php
-            parent::getFullName() . " cobro " . $this->calculateSalary() . " € mensuales";
+            <?=
+            parent::getFullName() . " cobra " . $this->calculateSalary() . " € mensuales";
             ?>
+            <br>
         </p>
         <?php
     }
