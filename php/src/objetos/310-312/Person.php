@@ -43,6 +43,11 @@ abstract class Person
         $this->edad = $edad;
     }
 
-    public abstract function toHTML(Person $person);
+    public function getFullName(): string
+    {
+        return $this->getNombre() . " " . $this->getApellidos();
+    }
+
+    public abstract function toHTML( Person $person );
 
 }

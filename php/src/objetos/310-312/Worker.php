@@ -24,5 +24,8 @@ abstract class Worker extends Person
 
     abstract function calculateSalary(): float;
 
-    abstract function havePayTaxes(): bool;
+    public function havePayTaxes(): bool
+    {
+        return self::RANGE_PAY_TAXES >= $this->calculateSalary();
+    }
 }
