@@ -30,19 +30,6 @@ class Employee extends Worker
         $this->pricePerHour = $pricePerHour;
     }
 
-
-    function toHTML( Person $person )
-    {
-        ?>
-        <p>
-            <?php
-            parent::getFullName() . " cobro " . $this->calculateSalary() . " € mensuales";
-            ?>
-        </p>
-        <?php
-
-    }
-
     function calculateSalary(): float
     {
         return $this->getHoursWorked() * $this->getPricePerHour();

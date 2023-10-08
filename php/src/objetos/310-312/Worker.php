@@ -20,7 +20,16 @@ abstract class Worker extends Person
         $this->phones = $phones;
     }
 
-    abstract function toHTML( Person $person );
+    function toHTML( Person $person )
+    {
+        ?>
+        <p>
+            <?php
+            parent::getFullName() . " cobro " . $this->calculateSalary() . " € mensuales";
+            ?>
+        </p>
+        <?php
+    }
 
     abstract function calculateSalary(): float;
 
