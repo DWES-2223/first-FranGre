@@ -28,5 +28,7 @@ $oliber->toHTML();
 
 print $hilaturasSanchis->getAllPaysheet() . " €";
 
+print $hilaturasSanchis->toJSON();
+
 
 

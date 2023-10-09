@@ -3,7 +3,7 @@ include_once("Worker.php");
 include_once("Employee.php");
 include_once("Manager.php");
 
-class Enterprise
+class Enterprise implements JSerializable
 {
     private string $name;
     private string $address;
@@ -78,5 +78,22 @@ class Enterprise
         </p>
         <?php
 
+    }
+
+
+    public function toJSON(): string
+    {
+        $mapa = array();
+        $mapa[] = ["name" => $this->getName()];
+        $mapa[] = ["addres" => $this->getAddress()];
+        foreach ( $this->getWorkers() as $clave => $valor ) {
+            $mapa[$clave] = $valor;
+        }
+        return json_encode( $mapa );
+    }
+
+    public function toSerialize(): string
+    {
+        return serialize( $this );
     }
 }
